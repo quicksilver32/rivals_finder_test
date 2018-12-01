@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,jsonify
 
 app = Flask(__name__)
 
@@ -10,6 +10,6 @@ def index():
 
 @app.route('/news', methods = ['GET'])
 def get_news():
-    return 'hi'
+    return jsonify(title='text')
 
 
