@@ -74,7 +74,7 @@ def event_list(record_filter=RecordFilter()):
             record_filter.get_names_with_types(),
             record_filter.get_values()),
         'Сортировка': None,
-        'Навигация': sbis.navigation(0, 20, True)
+        'Навигация': sbis.navigation(0, 10, True)
     })
     return events
 
