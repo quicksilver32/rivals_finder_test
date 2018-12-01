@@ -91,9 +91,10 @@ def get_news_list():
             NewsInfo(author_name=get_str(news, 'AuthorName'),
                      title=get_str(news['RecordNews'], 'Title'),
                      brief=re.sub(r'<.*?>', r'', get_str(news['RecordNews'], 'Brief')),
-                     date_time=get_str(news, 'LentaDateTime').replace(' ', 't')[:get_str(news, 'LentaDateTime').replace(' ', 't').index('+')],
+                     date_time=get_str(news, 'LentaDateTime').replace(' ', 'T')[:-3],
                      news_link=LINK_PREFIX.format(get_str(news, 'Object'))
                      ).get_json()
         )
     # print(news_list_json)
     return news_list_json
+
