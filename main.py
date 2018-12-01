@@ -91,7 +91,7 @@ def get_news_list():
             NewsInfo(author_name=get_str(news, 'AuthorName'),
                      title=get_str(news['RecordNews'], 'Title'),
                      brief=re.sub(r'<.*?>', r'', get_str(news['RecordNews'], 'Brief')),
-                     date_time=get_str(news, 'LentaDateTime'),
+                     date_time=get_str(news, 'LentaDateTime').replace(' ', 't')[:get_str(news, 'LentaDateTime').replace(' ', 't').index('+')],
                      news_link=LINK_PREFIX.format(get_str(news, 'Object'))
                      ).get_json()
         )
